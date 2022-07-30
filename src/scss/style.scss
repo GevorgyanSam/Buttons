@@ -1,0 +1,581 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    background-color: black;
+}
+
+.container {
+    margin: 100px auto;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    button {
+        margin: 60px;
+        font-size: 17px;
+    }
+}
+
+
+// ---------- Button 1 ---------- ----------
+
+
+@mixin button-1($color, $padding, $hoverColor) {
+    background-color: transparent;
+    text-transform: capitalize;
+    color: $color;
+    padding: $padding / 2.3 $padding;
+    border: 1px solid $color;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+        border: 1px solid transparent;
+        background-color: $color;
+        color: $hoverColor;
+    }
+}
+
+.btn1 {
+    @include button-1(blueviolet, 20px, white);
+}
+
+
+// ---------- Button 2 ---------- ----------
+
+
+@mixin button-2($color, $padding) {
+    color: $color;
+    padding: $padding / 2.3 $padding;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+        border: 1px solid $color;
+    }
+}
+
+.btn2 {
+    @include button-2(blueviolet, 20px);
+}
+
+
+// ---------- Button 3 ---------- ----------
+
+
+@mixin button-3($color, $padding, $hoverColor) {
+    color: $hoverColor;
+    border-radius: 5px;
+    padding: $padding / 2.3 $padding;
+    text-transform: capitalize;
+    background-color: $color;
+    border: 1px solid transparent;
+    transition: .5s;
+    cursor: pointer;
+
+    &:hover {
+        background-color: transparent;
+        border: 1px solid $color;
+        color: $color;
+    }
+}
+
+.btn3 {
+    @include button-3(blueviolet, 20px, white);
+}
+
+
+// ---------- Button 4 ---------- ----------
+
+
+@mixin button-4($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 1px;
+        background-color: transparent;
+        transition: .5s;
+    }
+
+    &:hover::after {
+        background-color: $color;
+    }
+}
+
+.btn4 {
+    @include button-4(blueviolet, 20px);
+}
+
+
+// ---------- Button 5 ---------- ----------
+
+
+@mixin button-5($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transition: .5s;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.btn5 {
+    @include button-5(blueviolet, 20px);
+}
+
+
+// ---------- Button 6 ---------- ----------
+
+
+@mixin button-6($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+.btn6 {
+    @include button-6(blueviolet, 20px);
+}
+
+
+// ---------- Button 7 ---------- ----------
+
+
+@mixin button-7($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &:hover::after {
+        width: 97%;
+    }
+
+    &:hover {
+        animation: btn7Anim .8s forwards .3s;
+    }
+
+    @keyframes btn7Anim {
+
+        0% {
+            border: 1px solid transparent;
+        }
+
+        100% {
+            border-top: 1px solid $color;
+            border-left: 1px solid $color;
+            border-right: 1px solid $color;
+            border-bottom: 1px solid transparent;
+        }
+
+    }
+}
+
+.btn7 {
+    @include button-7(blueviolet, 20px);
+}
+
+
+// ---------- Button 8 ---------- ----------
+
+
+@mixin button-8($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        width: 98%;
+    }
+
+    &:hover {
+        animation: btn8Anim .5s forwards .2s;
+    }
+
+    @keyframes btn8Anim {
+
+        0% {
+            border: 1px solid transparent;
+        }
+
+        100% {
+            border-left: 1px solid $color;
+            border-right: 1px solid $color;
+        }
+
+    }
+}
+
+.btn8 {
+    @include button-8(blueviolet, 20px);
+}
+
+
+// ---------- Button 9 ---------- ----------
+
+
+@mixin button-9($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 1px;
+        height: 0%;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 0%;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        height: 97%;
+    }
+
+    &:hover {
+        animation: btn9Anim .5s forwards .2s;
+    }
+
+    @keyframes btn9Anim {
+
+        0% {
+            border: 1px solid transparent;
+        }
+
+        100% {
+            border-top: 1px solid $color;
+            border-bottom: 1px solid $color;
+        }
+
+    }
+}
+
+.btn9 {
+    @include button-9(blueviolet, 20px);
+}
+
+
+// ---------- Button 10 ---------- ----------
+
+
+@mixin button-10($color, $padding, $hoverColor) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &:hover::after {
+        width: 98%;
+    }
+
+    &:hover {
+        animation: btn10Anim .8s forwards .5s;
+    }
+
+    @keyframes btn10Anim {
+
+    20% {
+            border-left: 1px solid $color;
+            border-right: 1px solid $color;
+            border-top: 1px solid $color;
+        }
+
+        100% {
+            border: 1px solid transparent;
+            background-color: $color;
+            color: $hoverColor;
+        }
+
+    }
+}
+
+.btn10 {
+    @include button-10(blueviolet, 20px, white);
+}
+
+
+// ---------- Button 11 ---------- ----------
+
+
+@mixin button-11($color, $padding, $hoverColor) {
+    color: $color;
+    text-transform: capitalize;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 0%;
+        height: 1px;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        width: 98%;
+    }
+
+    &:hover {
+        animation: btn11Anim 1s forwards .4s;
+    }
+
+    @keyframes btn11Anim {
+
+        20% {
+            border-left: 1px solid $color;
+            border-right: 1px solid $color;
+        }
+
+        100% {
+            border: 1px solid transparent;
+            background-color: $color;
+            color: $hoverColor;
+        }
+
+    }
+}
+
+.btn11 {
+    @include button-11(blueviolet, 20px, white);
+}
+
+
+// ---------- Button 12 ---------- ----------
+
+
+@mixin button-12($color, $padding, $hoverColor) {
+    color: $color;
+    text-transform: capitalize;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 1px;
+        height: 0%;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        width: 1px;
+        height: 0%;
+        background-color: $color;
+        transform: translate(-50%, -50%);
+        transition: .5s;
+    }
+
+    &:hover::after,
+    &:hover::before {
+        height: 97%;
+    }
+
+    &:hover {
+        animation: btn12Anim 1s forwards .5s;
+    }
+
+    @keyframes btn12Anim {
+
+        20% {
+            border-top: 1px solid $color;
+            border-bottom: 1px solid $color;
+        }
+
+        100% {
+            border: 1px solid transparent;
+            background-color: $color;
+            color: $hoverColor;
+        }
+
+    }
+}
+
+.btn12 {
+    @include button-12(blueviolet, 20px, white);
+}
