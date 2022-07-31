@@ -762,3 +762,169 @@ body {
 .btn15 {
     @include button-15(blueviolet, 20px, white);
 }
+
+
+// ---------- Button 16 ---------- ---------- ---------- ----------  ---------- ----------
+
+
+@mixin button-16($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: 1s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 1px solid $color;
+        transition: .3s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 1px solid $color;
+        transition: .3s;
+    }
+
+    &:hover::before {
+        top: -3px;
+        left: -3px;
+    }
+
+    &:hover::after {
+        top: 3px;
+        left: 3px;
+    }
+
+}
+
+.btn16 {
+    @include button-16(royalblue, 20px);
+}
+
+
+// ---------- Button 17 ---------- ---------- ---------- ----------  ---------- ----------
+
+
+@mixin button-17($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: 1s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        transition: .5s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        transition: .5s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+        border: 1px solid $color;
+    }
+
+}
+
+.btn17 {
+    @include button-17(royalblue, 20px);
+}
+
+
+// ---------- Button 18 ---------- ---------- ---------- ----------  ---------- ----------
+
+
+@mixin button-18($color, $padding, $bgColor) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid $color;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border: 1px solid $color;
+        height: 5px;
+        width: 12px;
+        top: -4px;
+        left: 10%;
+        background-color: $bgColor;
+        transition: .5s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        border: 1px solid $color;
+        height: 5px;
+        width: 12px;
+        bottom: -4px;
+        left: 80%;
+        background-color: $bgColor;
+        transition: .5s;
+    }
+
+    &:hover::before {
+        left: 80%;
+        width: 15px;
+        box-shadow: 0 0 4px 1px $color;
+    }
+
+    &:hover::after {
+        left: 10%;
+        width: 15px;
+        box-shadow: 0 0 4px 1px $color;
+    }
+
+    &:hover {
+        box-shadow: 0 0 5px 1px $color;
+    }
+
+}
+
+.btn18 {
+    @include button-18(royalblue, 20px, black);
+}
