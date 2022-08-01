@@ -1277,3 +1277,144 @@ body {
 .btn24 {
     @include button-24(rgb(210, 40, 216), 20px, white);
 }
+
+
+// ---------- Button 25 ---------- ---------- ---------- ----------  ---------- ----------
+
+
+@mixin button-25($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border: 1px solid $color;
+        left: 0;
+        top: 0;
+        height: 5px;
+        width: 10px;
+        transition: .5s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        border: 1px solid $color;
+        right: -1px;
+        bottom: -1px;
+        height: 5px;
+        width: 10px;
+        transition: .5s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 5px 1px $color;
+    }
+
+}
+
+.btn25 {
+    @include button-25(rgb(40, 151, 216), 20px);
+}
+
+
+// ---------- Button 26 ---------- ---------- ---------- ----------  ---------- ----------
+
+
+@mixin button-26($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border: 1px solid $color;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 5px 1px $color;
+        transition: .5s;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        border: 1px solid $color;
+        right: -1px;
+        bottom: -1px;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 0 5px 1px $color;
+        transition: .5s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+        height: 5px;
+        width: 10px;
+    }
+
+}
+
+.btn26 {
+    @include button-26(rgb(40, 151, 216), 20px);
+}
+
+
+// ---------- Button 27 ---------- ---------- ---------- ----------  ---------- ----------
+
+
+@mixin button-27($color, $padding) {
+    color: $color;
+    text-transform: capitalize;
+    border: 1px solid transparent;
+    background-color: transparent;
+    padding: $padding / 2.3 $padding;
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        border: 1px solid $color;
+        left: 50%;
+        top: 50%;
+        height: 0%;
+        width: 0%;
+        box-shadow: 0 0 5px 1px $color;
+        transition: .5s;
+    }
+
+    &:hover::before {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+    }
+
+}
+
+.btn27 {
+    @include button-27(rgb(40, 151, 216), 20px);
+}
